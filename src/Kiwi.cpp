@@ -679,7 +679,7 @@ namespace kiwi
 					// would move the whole result so far again.
 					ret.emplace_back();
 					ret.back().first.reserve(ret[parent].first.size() + pathes[i].path.size());
-					ret.back().first = ret[parent].first;
+					ret.back().first.insert(ret.back().first.end(), ret[parent].first.begin(), ret[parent].first.end());
 					ret.back().second = ret[parent].second;
 					spStatesByRet.push_back(spStatesByRet[parent]);
 					parentMap.emplace_back(i);
